@@ -10,7 +10,7 @@
 
 ## 📖 Overview
 This repository contains my work for the **Kaggle BigQuery Machine Learning competition**.  
-The main notebook [`notebook.ipynb`](notebook.ipynb) demonstrates:
+The main notebook [`notebook.ipynb`](Civic_Proof_Notebook.ipynb) demonstrates:
 
 - 🔍 Exploratory analysis  
 - 🛠️ Feature engineering  
