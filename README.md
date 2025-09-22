@@ -47,3 +47,7 @@ The workflow demonstrates how to:
 3. **Embeddings with BigQuery ML**  
    ```sql
    ML.GENERATE_EMBEDDING
+
+## 🎥 Demo Video
+Check out the project demo video:  
+[Watch on YouTube →](https://youtu.be/Lnu43vfF5UQ)
