@@ -1,54 +1,49 @@
 <h1 align="center" style="color:#2E5984;">
-🏆 BigQuery ML Competition – Kaggle Notebook
+🚦 BigQuery ML + Generative AI – Traffic Violation Analysis
 </h1>
 
 <p align="center">
-  <em>Exploring, modeling, and deploying with <strong>BigQuery ML</strong> in a Kaggle competition setting</em>
+  <em>A hybrid pipeline combining <strong>computer vision preprocessing</strong>, 
+  <strong>BigQuery ML</strong>, and <strong>Generative AI (Gemini Vision)</strong> 
+  to transform raw traffic data into <strong>governance-ready insights</strong>.</em>
 </p>
 
 ---
 
 ## 📖 Overview
-This repository contains my work for the **Kaggle BigQuery Machine Learning competition**.  
-The main notebook [`notebook.ipynb`](Civic_Proof_Notebook.ipynb) demonstrates:
+This repository contains my **Kaggle notebook** and supporting files for a project that blends **CV preprocessing** with **BigQuery ML + Generative AI**.  
 
-- 🔍 Exploratory analysis  
-- 🛠️ Feature engineering  
-- 🤖 Model training & evaluation with **BigQuery ML**
+The workflow demonstrates how to:  
+- 📸 Parse and preprocess **traffic violation evidence** (car plate detection).  
+- ☁️ Upload raw & cropped images to **Google Cloud Storage (GCS)**.  
+- 🗄️ Store structured evidence in **BigQuery**.  
+- 🤖 Use **BigQuery ML** for:  
+  - Embedding generation → `ML.GENERATE_EMBEDDING`  
+  - Text generation → `ML.GENERATE_TEXT` (Gemini Vision)  
+- 📝 Automatically generate:  
+  - Officer narratives (fact-based explanations)  
+  - Citizen-friendly summaries (plain-language notices)  
 
 ---
 
 ## 📂 Dataset
-- Hosted directly on **Google BigQuery**.  
-- Accessed through the Kaggle competition environment.  
-- Queries are executed natively in **SQL with ML extensions**.
+- Input: [**Car Plate Detection dataset**](https://www.kaggle.com/datasets/andrewmvd/car-plate-detection) (Pascal VOC XML annotations).  
+- Plate crops extracted with **Python + PIL**.  
+- Processed images uploaded to GCS, metadata mirrored in **BigQuery dataset** → `traffic_prod_euw4`.  
 
 ---
 
 ## 🔬 Methodology
-1. 📊 **Exploration & Cleaning** — inspect data quality and distribution.  
-2. 🧩 **Feature Engineering** — SQL transformations to create meaningful signals.  
-3. 🤖 **Model Training** — leveraging `ML.LINEAR_REG`, `ML.BOOSTED_TREE_CLASSIFIER`, and more.  
-4. 📈 **Evaluation** — standard metrics such as AUC, accuracy, and log loss.  
-5. 🚀 **Submission** — predictions generated via BigQuery and submitted on Kaggle.
 
----
+1. **Data Preprocessing**  
+   - Parsed XML → structured BigQuery tables  
+   - Cropped license plates with `PIL`  
+   - Synced raw & cropped images to GCS  
 
-## ✅ Results
-- Baseline model established in the initial notebook.  
-- Iterative improvements through **feature selection** & **hyperparameter tuning**.  
-- Final submission derived from optimized BigQuery ML predictions.
+2. **BigQuery Integration**  
+   - Created dataset/tables (`traffic_prod_euw4`)  
+   - Stored evidence: rule, decision, plate text, speed, light state  
 
----
-
-## ⚙️ Requirements
-- Python **3.x**  
-- Dependencies listed in [`requirements.txt`](requirements.txt)  
-
----
-
-## 🚀 Usage
-Clone the repository and navigate inside:
-```bash
-git clone https://github.com/<your-username>/bigquery-ml-competition.git
-cd bigquery-ml-competition
+3. **Embeddings with BigQuery ML**  
+   ```sql
+   ML.GENERATE_EMBEDDING
