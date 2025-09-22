@@ -1,0 +1,13 @@
+Survey – CIVIC-PROOF: AI-Powered Traffic Enforcement with BigQuery
+------------------------------------------------------------------
+
+1. Please tell us how many months of experience with BigQuery AI each team member has.
+- 1 month of experience with BigQuery AI.
+
+2. Please tell us how many months of experience with Google Cloud each team member has.
+- 1 month of experience with Google Cloud.
+
+3. We’d love to hear from you and your experience in working with the technology during this hackathon, positive or negative. Please provide any feedback on your experience with BigQuery AI.
+- Our experience with BigQuery AI was largely positive. We were impressed by how easy it was to generate embeddings and text directly inside BigQuery using simple SQL commands. The integration with Gemini Vision for generating officer narratives and citizen summaries was smooth and powerful.
+- On the other hand, we faced some challenges: our project was suspended twice during the hackathon, which interrupted development and debugging. This was frustrating and forced us to adjust our workflow.
+- Overall, BigQuery AI showed great potential for building real-world AI solutions at scale. Despite the temporary setbacks, we found it to be a productive and valuable technology, and we are excited to continue exploring it further.
